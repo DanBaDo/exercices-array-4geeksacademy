@@ -64,3 +64,21 @@ function findInArrayDeclarative(array,value) {
 //console.log(findInArrayDeclarative([0,1,2],3))
 console.log(`Ejercicio 1 declarativo: ${findInArrayDeclarative(exampleArray,4)}`)
 
+/**
+ * Exercise 2
+ */
+
+/**
+ * 
+ * @param {*} array 
+ * @returns 
+ */
+function getStrings(array) {
+    return array.filter(
+        item => typeof(item) === "string"
+    )
+}
+/* Tests */
+console.log('Ejercicio 2:', getStrings(shit))
+
+
