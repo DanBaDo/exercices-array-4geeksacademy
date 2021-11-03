@@ -36,7 +36,7 @@
 ### ¿Cómo entregar el proyecto?
 
 1. Finaliza todos los ejercicios propuestos y asegurate de que están comentados :) 
-2. Escribeme por Slack @Manu y enviame el Link de tu repo para poder comprobar los ejercicios.
+2. Escribeme por Slack @Manu y enviame el Link de tu repo para poder comprobar los ejercicios. -> Dijo en generador de dominios
 3. Espera mi respuesta o tus amigos ISSUES por GITHUB
 
 ### Contribuciones
