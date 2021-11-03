@@ -21,7 +21,7 @@ function Point(x, y) {
 /**
  * Search for first position for a value in a array and return the index or null if not found.
  * @param {*} array Array where to search
- * @param {*} value Value to search
+ * @param {*} value Value for search to
  * @returns index for first occurrence or null
  */
 function findInArray(array,value) {
@@ -29,15 +29,16 @@ function findInArray(array,value) {
         console.error('First argument must be an array')
         return
     }
-    for (idx of array) {
+    for ( idx in array ) {
         if ( array[idx] === value) return idx
     }
     return null
 }
-// Tests
-console.log(findInArray('',1))
-console.log(findInArray([0,1,2,3,4],1))
-console.log(findInArray([0,1,2],3))
+/* Tests */
+//console.log(findInArray('',1))
+//console.log(findInArray([0,1,2,3,4],1))
+//console.log(findInArray([0,1,2],3))
+console.log(`Ejercicio 1 imperativo: ${findInArray(exampleArray,4)}`)
 
 /**
  * Exercise 1
@@ -55,10 +56,11 @@ function findInArrayDeclarative(array,value) {
         console.error('First argument must be an array')
         return
     }
-    return array.find( (item) => item === value )
+    return array.indexOf( value )
 }
-// Tests
-console.log(findInArrayDeclarative('',1))
-console.log(findInArrayDeclarative([0,1,2,3,4],1))
-console.log(findInArrayDeclarative([0,1,2],3))
+/* Tests */
+//console.log(findInArrayDeclarative('',1))
+//console.log(findInArrayDeclarative([0,1,2,3,4],1))
+//console.log(findInArrayDeclarative([0,1,2],3))
+console.log(`Ejercicio 1 declarativo: ${findInArrayDeclarative(exampleArray,4)}`)
 
