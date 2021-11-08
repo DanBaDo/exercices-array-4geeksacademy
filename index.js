@@ -19,26 +19,25 @@ function Point(x, y) {
  */
 
 /**
- * Search for first position for a value in a array and return the index or null if not found.
+ * Search for all the positios with a value in a array and return an array of indexes.
  * @param {*} array Array where to search
  * @param {*} value Value for search to
- * @returns index for first occurrence or null
+ * @returns indexes array 
  */
 function findInArray(array,value) {
     if ( ! Array.isArray(array) ) {
-        console.error('First argument must be an array')
-        return
+        console.error('First argument must be an array');
+        return;
     }
-    for ( idx in array ) {
-        if ( array[idx] === value) return idx
-    }
-    return null
+    const indexes = [];
+    for ( idx in array ) if ( array[idx] === value) indexes[indexes.length] = idx
+    return indexes
 }
 /* Tests */
 //console.log(findInArray('',1))
-//console.log(findInArray([0,1,2,3,4],1))
+//console.log(findInArray([0,1,2,3,4,1],1))
 //console.log(findInArray([0,1,2],3))
-console.log(`Ejercicio 1 imperativo: ${findInArray(exampleArray,4)}`)
+console.log('Ejercicio 1 imperativo:', findInArray(exampleArray,4))
 
 /**
  * Exercise 1
@@ -46,23 +45,28 @@ console.log(`Ejercicio 1 imperativo: ${findInArray(exampleArray,4)}`)
  */
 
 /**
- * Similar to previous, but return undefined in can't fiend value.
+ * Similar to previous.
  * @param {*} array 
  * @param {*} value 
- * @returns 
+ * @returns array of indexes
  */
 function findInArrayDeclarative(array,value) {
     if ( ! Array.isArray(array) ) {
-        console.error('First argument must be an array')
-        return
+        console.error('First argument must be an array');
+        return;
     }
-    return array.indexOf( value )
+    const indexes = [];
+    array.forEach( (item, idx) => {
+        if (value === item) indexes.push(idx)
+        return
+    } );
+    return indexes;
 }
 /* Tests */
 //console.log(findInArrayDeclarative('',1))
 //console.log(findInArrayDeclarative([0,1,2,3,4],1))
 //console.log(findInArrayDeclarative([0,1,2],3))
-console.log(`Ejercicio 1 declarativo: ${findInArrayDeclarative(exampleArray,4)}`)
+console.log('Ejercicio 1 declarativo:',findInArrayDeclarative(exampleArray,4))
 
 /**
  * Exercise 2
@@ -104,7 +108,7 @@ function Distance(x,y) {
  * Get two points and return x and y distance.
  * @param {Point} p1 
  * @param {Point} p2 
- * @returns {Distance||null} Return 
+ * @returns {Distance||Error}  
  */
 function getDistance(p1, p2) {
     return p1 instanceof Point && p2 instanceof Point ? new Distance(Math.abs(p1.x - p2.x), Math.abs(p1.y - p2.y)) : new Error('Arguments must be Point instances')
